@@ -1,0 +1,125 @@
+#✦------------------------------------------------------✦
+#|                      Main Config                     |
+#✦------------------------------------------------------✦
+#RealScoreboard는 JoseGamerPT에서 만들고 Neziw에서 관리합니다.
+#
+# 기본 지원  Placeholders 리스트 입니다
+# %loc% - 플레이어의 위치를 ​​표시합니다.
+# %rainbow% - 무지개 색상을 표시합니다.
+# %life% - 플레이어의 생명을 수치로 표시합니다.
+# %lifeheart% - 플레이어의 생명을 하트로 표시합니다.
+# %time% - 현재 시간을 표시합니다.
+# %world% -현재 세계 이름을 표시합니다.
+# %day% -현재 날짜를 표시합니다.
+# %serverip% -서버 아이피를 보여줍니다.
+# %version% -서버 버전을 표시합니다.
+# %versionshort% -서버 버전을 짧게 표시합니다.
+# %ping% -플레이어의 핑을 표시합니다.
+# %ram% -램을 표시합니다.
+# %mobkills% -플레이어가 죽인 몹의 수를 표시합니다.
+# %jumps% -플레이어가 실행한 점프 수를 표시합니다.
+# %port% -서버의 포트를 표시합니다.
+# %maxplayers% -최대 플레이어 수를 표시합니다.
+# %online% -온라인 플레이어 수를 표시합니다.
+# %playerip% -플레이어 IP를 표시합니다.
+# %yaw% -플레이어의 요를 표시합니다.
+# %pitch% -플레이어의 피치를 표시합니다.
+# %displayname% -플레이어의 디스플레이 이름을 표시합니다.
+# %playerfood% -플레이어 배고픔을 표시합니다.
+# %group% -플레이어의 그룹을 표시합니다.
+# %money% -플레이어의 포맷된 돈을 표시합니다.
+# %moneylong% -플레이어의 전체 돈을 표시합니다.
+# %prefix% -플레이어 그룹의 접두사를 표시합니다.
+# %suffix% -플레이어 그룹의 접미사를 표시합니다.
+# %playtime% -플레이어의 총 플레이 시간을 표시합니다.
+# 좌표: %x%, %y%, %z%
+#
+#유용한 링크:
+#SpigotMC -https://www.spigotmc.org/resources/realscoreboard-1-13-to-1-19-2.22928/
+#Discord 서버 -https://discord.gg/t7gfnYZKy8
+#bStats -https://bstats.org/plugin/bukkit/RealScoreboard/10080
+#HEX 색상 형식: https://github.com/Iridium-Development/IridiumColorAPI
+#개발자를 위한 API: https://github.com/JoseGamerPT/RealScoreboard/blob/master/api.md
+Debug: false
+Config:
+  ItemAdder-Support: false
+  mcMMO-Support: false
+  Check-for-Updates: true
+  Prefix: "&b리얼&9스코어보드 &7| &r"
+  Reloaded: "&f구성이 &a로드되었습니다&f."
+  Use-Placeholders-In-Scoreboard-Titles: false
+  RealScoreboard-Disabled-By-Default: false
+  Auto-Hide-In-Vanish: true
+  #원하는 시간 표현법을 지정하세요
+  Hours:
+    Formatting: "HH:mm:ss"
+    Offset: 0
+  Messages:
+    Scoreboard-Toggle:
+      "활성화": "&f점수판이 &a활성화&f로 바뀌었습니다."
+      "비활성화": "&f점수판이 &c비활성화&f로 설정되었습니다."
+  Animations:
+    Title-Delay: 20
+    Loop-Delay: 20
+  Scoreboard-Refresh: 10
+  Disabled-Worlds:
+    - testWorld
+    - ExampleWorld2
+  #월드는 사용하시는 월드 지정해서 적용하세요
+  Bypass-Worlds:
+    - skywarsLobby
+  #월드는 사용하시는 월드 지정해서 적용하세요
+  Scoreboard:
+    world:
+      #special 그룹 스코어보드
+      special:
+        Switch-Timer: 50
+        Boards:
+          Board1:
+            Title:
+              - "&b리얼 스코어보드"
+              - "&6> &9리얼 스코어보드 &6<"
+              - "&a>&6> &b리얼 스코어보드 &6<&a<"
+              - "&6> &9리얼 스코어보드 &6<"
+            Lines:
+              - "%blank%"
+              - " &a스페셜 권한 스코어보드"
+              - "%blank%"
+      #default 그룹 스코어보드
+      default:
+        Switch-Timer: 35
+        Boards:
+          Board1:
+            Title:
+              - "&b리얼 스코어보드"
+              - "&6> &9리얼 스코어보드 &6<"
+              - "&a>&6> &b리얼 스코어보드 &6<&a<"
+              - "&6> &9리얼 스코어보드 &6<"
+            Lines:
+              - "%blank%"
+              - " &7닉네임: &f%playername% &8| &f%ping%"
+              - " &f%day% &8| &f%time%"
+              - " &7금액: &f%money% &8| &7XP: &f%xp%"
+              - " &7좌표정보:"
+              - " &fX %x% Y %y% Z %z%"
+              - "%blank%"
+              - "  &f서버 정보 &e#1"
+              - "%blank%"
+              - " &7RAM: &f%ram%"
+              - " &7온라인: &f%online%&8/&f%maxplayers%"
+              - "%blank%"
+          Board2:
+            Title:
+              - "&a통계 게시판"
+              - "&a통계 게시판"
+            Lines:
+              - "%blank%"
+              - " &7통계"
+              - "  &f처치수: %kills% &7| &fKD: %kd%"
+              - "  몬스터 처치수: %mobkills%"
+              - "  사망 횟수: %deaths%"
+              - "  점프 횟수: %jumps%"
+              - "%blank%"
+              - "&a통계 게시판"
+              - "%blank%"
+Version: 15
